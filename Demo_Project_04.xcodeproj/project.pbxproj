@@ -57,7 +57,7 @@
 		6B887AFA269FC4F900C814BF /* Demo_Project_04UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Demo_Project_04UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B887AFE269FC4F900C814BF /* Demo_Project_04UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo_Project_04UITests.swift; sourceTree = "<group>"; };
 		6B887B00269FC4F900C814BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6B887B0C269FC5C000C814BF /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6B887B0C269FC5C000C814BF /* Combining.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Combining.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		70C182955AA15BCABD5968AA /* Pods-Demo_Project_04UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo_Project_04UITests.debug.xcconfig"; path = "Target Support Files/Pods-Demo_Project_04UITests/Pods-Demo_Project_04UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		87E79532D18A3C712063DAC3 /* Pods_Demo_Project_04UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo_Project_04UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1960EC3DB5FEA599AF5C80 /* Pods-Demo_Project_04UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo_Project_04UITests.release.xcconfig"; path = "Target Support Files/Pods-Demo_Project_04UITests/Pods-Demo_Project_04UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		6B887AD0269FC4F600C814BF = {
 			isa = PBXGroup;
 			children = (
-				6B887B0C269FC5C000C814BF /* MyPlayground.playground */,
+				6B887B0C269FC5C000C814BF /* Combining.playground */,
 				6B887ADB269FC4F600C814BF /* Demo_Project_04 */,
 				6B887AF2269FC4F900C814BF /* Demo_Project_04Tests */,
 				6B887AFD269FC4F900C814BF /* Demo_Project_04UITests */,

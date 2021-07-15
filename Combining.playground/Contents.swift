@@ -156,3 +156,136 @@ print("---------------")
 
 //Trigger
 //withLatestFrom
+let button = PublishSubject<Void>()
+let textfield = PublishSubject<String>()
+
+let observable8 = button.withLatestFrom(textfield)
+_ = observable8.subscribe(onNext: {value in
+    print(value)
+})
+.disposed(by: bag)
+textfield.onNext("Đà Nẵng")
+textfield.onNext("Nha Trang")
+button.onNext(())
+textfield.onNext("Vũng Tàu")
+button.onNext(())
+print("---------------")
+
+//sample
+let button2 = PublishSubject<Void>()
+let textfield2 = PublishSubject<String>()
+let observable9 = textfield2.sample(button2)
+_ = observable9.subscribe(onNext: {value in
+    print(value)
+}).disposed(by: bag)
+textfield2.onNext("Đà Nẵng")
+textfield2.onNext("Nha Trang")
+textfield2.onNext("Vũng Tàu")
+button2.onNext(())
+button2.onNext(())
+print("---------------")
+print("---------------")
+print("---------------")
+
+//switches
+//amb
+let disposeBag = DisposeBag()
+let wor = PublishSubject<String>()
+let num = PublishSubject<String>()
+
+let observable10 = wor.amb(num)
+observable10.subscribe(onNext: {(value) in
+    print(value)
+})
+.disposed(by: bag)
+wor.onNext("Không")
+num.onNext("1")
+num.onNext("2")
+num.onNext("3")
+wor.onNext("Một")
+wor.onNext("Hai")
+wor.onNext("Ba")
+num.onNext("4")
+num.onNext("5")
+num.onNext("6")
+wor.onNext("Bốn")
+wor.onNext("Năm")
+wor.onNext("Sáu")
+print("---------------")
+
+//switchLatest
+let w = PublishSubject<String>()
+let n = PublishSubject<String>()
+let expression = PublishSubject<String>()
+
+let observable11 = PublishSubject<Observable<String>>()
+observable11.switchLatest().subscribe(onNext: {(value) in
+    print(value)
+    }, onCompleted: {print("Completed")})
+    .disposed(by: bag)
+observable11.onNext(n)//observable type <string>
+n.onNext("1")
+n.onNext("2")
+n.onNext("3")
+observable11.onNext(w)
+w.onNext("Một")
+w.onNext("Hai")
+w.onNext("Ba")
+n.onNext("4")
+n.onNext("5")
+n.onNext("6")
+observable11.onNext(expression)
+expression.onNext("+")
+expression.onNext("-")
+   
+observable11.onNext(w)
+w.onNext("Bốn")
+w.onNext("Năm")
+w.onNext("Sáu")
+print("---------------")
+print("---------------")
+print("---------------")
+//Combining elements within a sequence
+//reduce
+var source2 = Observable.of(1, 2, 3, 4, 5, 6, 7, 8, 9)
+var observable12 = source2.reduce(0, accumulator: +)
+_ = observable12
+    .subscribe(onNext: { value in
+        print(value)
+    })
+    .disposed(by: bag)
+
+print("---------------")
+print("#2")
+observable12 = source2.reduce(0){$0 + $1}
+observable12.subscribe(onNext: { value in
+    print(value)
+})
+.disposed(by: bag)
+print("---------------")
+print("#3")
+observable12 = source2.reduce(0){ summary, newValue in
+    return summary + newValue
+}
+observable12.subscribe(onNext: { value in
+    print(value)
+})
+.disposed(by: bag)
+print("---------------")
+//scan
+observable12 = source2.scan(0){ summary, newValue in
+    return summary + newValue
+}
+observable12.subscribe(onNext: { value in
+    print(value)
+})
+.disposed(by: bag)
+
+
+
+
+//TODO coi lại _ ,subscriber, (value) và sample. Sau đó thì làm thử subscribe với các subject, Coi thử cách nào để dùng lại observable hay subject
+
+
+
+
